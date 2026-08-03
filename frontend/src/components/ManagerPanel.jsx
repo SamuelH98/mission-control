@@ -25,7 +25,7 @@ export default function ManagerPanel({ managers, onCreate, onDelete }) {
   return (
     <aside className="panel">
       <h2 className="panel__title">Flight Crew</h2>
-
+      <br></br>
       <form className="manager-form" onSubmit={handleSubmit}>
         <div className="field-row">
           <input
