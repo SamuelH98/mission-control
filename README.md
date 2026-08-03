@@ -48,13 +48,17 @@ docker compose up --build
 
 ## Running it locally (for development)
 
-You need Java 17+ and Node 20+. No Maven install required — the project ships a Maven wrapper.
+You need:
+
+- **Java 17+** (JDK, not just a JRE — you need `javac`)
+- **Maven 3.9+**
+- **Node 20+**
 
 **1. Start the backend**
 
 ```bash
 cd backend
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
 Wait for "Started MissionControlApplication". The API is now on http://localhost:8080. On first start it creates the database and seeds a few managers and projects.
@@ -102,7 +106,7 @@ Validation rules: title required (≤50 chars), description ≤500, status must 
 
 ```bash
 cd backend
-./mvnw test
+mvn test
 ```
 
 These are Spring Boot integration tests (MockMvc) against a throwaway SQLite file — CRUD happy paths, validation failures, and the constraint cases.
