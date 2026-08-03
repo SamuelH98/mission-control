@@ -1,0 +1,11 @@
+services:
+  mission-control:
+    build: .
+    image: mission-control:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - mission-control-data:/app/data
+
+volumes:
+  mission-control-data:
