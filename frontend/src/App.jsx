@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import ProjectTable from './components/ProjectTable'
 import ProjectForm from './components/ProjectForm'
 import ManagerPanel from './components/ManagerPanel'
+import StatsBand from './components/StatsBand'
 import { createManager, createProject, deleteManager, deleteProject, listManagers, listProjects, updateProject } from './api'
 
 export default function App() {
@@ -105,6 +106,8 @@ export default function App() {
           </p>
         </div>
       </section>
+
+      {!loading && <StatsBand projects={projects} />}
 
       <main className="layout">
         <section className="panel panel--table">
